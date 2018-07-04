@@ -1,0 +1,6 @@
+{
+  "name": "piedra-papel-tijera",
+  "short_name": "piedra-papel-tijera",
+  "start_url": "/",
+  "display": "standalone"
+}

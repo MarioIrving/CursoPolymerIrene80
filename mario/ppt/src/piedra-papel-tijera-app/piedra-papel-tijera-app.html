@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="/src/piedra-papel-tijera-app/ganador-contest.html">
+<link rel="import" href="/src/piedra-papel-tijera-app/opcion-contest.html">
+<dom-module id="piedra-papel-tijera-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h1 id="titulo">Rock, Paper, Scissors Contest</h1>
+    <opcion-contest></opcion-contest>
+    <ganador-contest></ganador-contest>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PiedraPapelTijeraApp extends Polymer.Element {
+      static get is() { return 'piedra-papel-tijera-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'piedra-papel-tijera-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PiedraPapelTijeraApp.is, PiedraPapelTijeraApp);
+  </script>
+</dom-module>

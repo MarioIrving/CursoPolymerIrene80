@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="ganador-contest">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div class="container">
+      <input type="text" name="" id="">
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GanadorContest extends Polymer.Element {
+      static get is() { return 'ganador-contest'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'ganador-contest'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(GanadorContest.is, GanadorContest);
+  </script>
+</dom-module>

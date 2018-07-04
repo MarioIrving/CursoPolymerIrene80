@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="opcion-contest">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div class="container">
+      <template is="dom-repeat" items="[[imagen]]">
+        <img src="[[item]]" alt="">
+      </template>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class OpcionContest extends Polymer.Element {
+      static get is() { return 'opcion-contest'; }
+      static get properties() {
+        return {
+          opcion: {
+            type: String,
+            value: 'opcion-contest'
+          },
+          imagen: {
+            type: Array,
+            value() {
+              return [
+                '/img/papel.png',
+                '/img/piedra.png',
+                '/img/tijera.png',
+              ];
+            }
+
+          }
+        };
+      }
+    }
+
+    window.customElements.define(OpcionContest.is, OpcionContest);
+  </script>
+</dom-module>
