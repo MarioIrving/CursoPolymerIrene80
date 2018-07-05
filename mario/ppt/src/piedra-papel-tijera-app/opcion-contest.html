@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="/src/piedra-papel-tijera-app/ganador-contest.html">
 
 <dom-module id="opcion-contest">
   <template>
@@ -10,10 +11,10 @@
     </style>
     <div class="container">
       <template is="dom-repeat" items="[[imagen]]">
-        <img src="[[item]]" alt="">
+        <img src="[[item.imgURL]]"  on-click="pasaOpcion">
       </template>
     </div>
-
+    <ganador-contest opcion=[[id]]></ganador-contest>
   </template>
 
   <script>
@@ -25,23 +26,27 @@
       static get is() { return 'opcion-contest'; }
       static get properties() {
         return {
-          opcion: {
-            type: String,
-            value: 'opcion-contest'
-          },
+          id: String,
           imagen: {
             type: Array,
             value() {
               return [
-                '/img/papel.png',
-                '/img/piedra.png',
-                '/img/tijera.png',
+                {name:'papel', imgURL: '/img/papel.png'},
+                {name:'piedra', imgURL: '/img/piedra.png'},
+                {name:'tijera', imgURL: '/img/tijera.png'}
               ];
             }
 
           }
         };
       }
+      
+      pasaOpcion(e){
+         this.id = e.model.get('item.name');
+         console.log(this.id);
+      }
+
+
     }
 
     window.customElements.define(OpcionContest.is, OpcionContest);

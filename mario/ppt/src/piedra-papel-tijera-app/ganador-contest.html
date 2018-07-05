@@ -8,7 +8,7 @@
       }
     </style>
     <div class="container">
-      <input type="text" name="" id="">
+      <input type="text" value="[[opcion]]">
     </div>
 
   </template>
@@ -22,12 +22,12 @@
       static get is() { return 'ganador-contest'; }
       static get properties() {
         return {
-          prop1: {
-            type: String,
-            value: 'ganador-contest'
-          }
+          opcion: String
         };
       }
+
+
+
     }
 
     window.customElements.define(GanadorContest.is, GanadorContest);
